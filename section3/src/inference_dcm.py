@@ -323,7 +323,7 @@ if __name__ == "__main__":
     # Send report to our storage archive
     # TASK: Write a command line string that will issue a DICOM C-STORE request to send our report
     # to our Orthanc server (that runs on port 4242 of the local machine), using storescu tool
-    os_command("storescu 127.0.0.1 4242 -v -aec HIPPOAI +r +sd /home/workspace/src/")
+    os.system("storescu 127.0.0.1 4242 -v -aec HIPPOAI +r +sd ../out/report.dcm")
 
     # This line will remove the study dir if run as root user
     # Sleep to let our StoreSCP server process the report (remember - in our setup
